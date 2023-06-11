@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recipe Sharing Platform</title>
+  <link rel="stylesheet" type="text/css" href="stylesrec.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9c2ff;
+    }
+
+    .container {
+      display: flex;
+      max-width: 800px;
+      background-color: #ffffff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .login-form {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .login-form h2 {
+      margin-top: 0;
+    }
+
+    .login-form form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login-form label {
+      margin-bottom: 5px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    .login-form button {
+      background-color: #4CAF50;
+      color: #ffffff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .login-form button:hover {
+      opacity: 0.8;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .content h2 {
+      margin-top: 0;
+    }
+
+    .recipe-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .recipe-item .recipe-image {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+
+    .recipe-item .recipe-details {
+      flex: 1;
+    }
+
+    .recipe-item h3 {
+      margin: 0;
+    }
+
+    .recipe-item p {
+      margin: 0;
+      margin-top: 5px;
+    }
+
+    .sidebar-images {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sidebar-images img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-form">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="signup-link">Sign Up</a></p>
+      <p><a href="#" id="forgot-password-link">Forgot Password?</a></p>
+    </div>
+    <aside class="sidebar">
+      <div class="sidebar-images">
+        <img src="italian.jpg" alt="Cuisine 1">
+        <img src="indian.jpg" alt="Cuisine 2">
+        <img src="chinese.jpg" alt="Cuisine 3">
+      </div>
+    </aside>
+    <main class="content" style="display: none;">
+      <header>
+        <h1>Recipe Sharing Platform</h1>
+      </header>
+
+      <section id="home">
+        <h2>Welcome to Recipe Sharing Platform!</h2>
+        <p>This is a platform where you can share and explore delicious recipes.</p>
+      </section>
+
+      <section id="create" style="display: none;">
+        <h2>Create a Recipe</h2>
+        <form id="recipe-form">
+          <label for="recipe-name">Recipe Name:</label>
+          <input type="text" id="recipe-name" required>
+
+          <label for="ingredients">Ingredients:</label>
+          <textarea id="ingredients" required></textarea>
+
+          <label for="instructions">Instructions:</label>
+          <textarea id="instructions" required></textarea>
+
+          <button type="submit">Submit Recipe</button>
+        </form>
+      </section>
+
+      <section id="browse" style="display: none;">
+        <h2>Browse Recipes</h2>
+        <ul id="recipe-list">
+          <!-- Recipes will be dynamically added here -->
+        </ul>
+      </section>
+
+      <footer>
+        <p>&copy; 2023 Recipe Sharing Platform. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src=".js"></script>
+</body>
+</html>
